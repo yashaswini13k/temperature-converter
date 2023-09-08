@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>temperature converter</title>
+        <style>
+            #1{border: 1;
+                background-color: grey;
+                opacity: 60%;
+            }
+        </style>
+    </head>
+    <body background="https://www.health.com/thmb/RpF7vwJMvRwCNy4LJNwNmjo1TUU=/2000x0/filters:no_upscale():max_bytes(150000):strip_icc()/thermometer-AdobeStock_300350158-2000-bc612aba576840a385a3571d0bc33bd3.jpg">
+        <center>
+            <h1>TEMPERATURE CONVERSION</h1><br><br>
+            <div id="1"><H2>TEMPERATURE: <input type="text" id="t" size="4"><br>
+                <h3>from:
+                <select name="from" id="from">
+                    <option value="celcius">celcius</option>
+                    <option value="fahrenheit">fahrenheit</option>
+                    <option value="kelvin">kelvin</option>
+                </select>
+                to:
+                <select name="to" id="to">
+                    <option value="celcius">celcius</option>
+                    <option value="fahrenheit">fahrenheit</option>
+                    <option value="kelvin">kelvin</option>
+                </select></h3><br>
+            <button type="button" onclick="func()">click</button></H2>
+            <p id="p"> </p>
+        </div>
+        </center>
+        <script>
+            function func()
+            {
+                var t=document.getElementById("t").value;
+                t=parseInt(t);
+                var t2=parseInt;
+                var fr=document.getElementById("from").value;
+                var to=document.getElementById("to").value;
+                if (fr==to){
+                    document.getElementById("p").innerHTML=t +" "+ fr;
+                }
+                else if(fr=="celcius"){
+                    if(to=="fahrenheit"){
+                        var t2=(9/5*t)+32;
+                        document.getElementById("p").innerHTML=t2 + " "+to;
+                    }
+                    else{
+                        var t2=t+273
+                        document.getElementById("p").innerHTML=t2 + " "+to;
+                    }
+                }
+                else if(fr=="fahrenheit"){
+                    if(to=="celcius"){
+                        var t2=(t-32)*5/9;
+                        document.getElementById("p").innerHTML=t2 + " "+to;
+                    }
+                    else{
+                        var t2=((t-32)*5/9)+273;
+                        document.getElementById("p").innerHTML=t2 + " "+to;
+                    }
+                }
+                else{
+                    if(to=="celcius"){
+                        var t2=t-273;
+                        document.getElementById("p").innerHTML=t2 + " "+to;
+                    }
+                    else{
+                        var t2=((t-273.15)*9/5)+32 ;
+                        document.getElementById("p").innerHTML=t2 + " "+to;
+                    }
+                }
+                
+            }
+        </script>
+    </body>
+ 
+</html>
